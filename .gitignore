@@ -1,0 +1,24 @@
+# build output and local tooling
+build/
+.gradle/
+.kotlin/
+.idea/
+*.iml
+local.properties
+captures/
+# signing material: never commit
+*.keystore
+*.jks
+*.p12
+gradle.properties.local
+# binaries and working data
+*.apk
+*.aab
+*.ods
+*.odt
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+__pycache__/

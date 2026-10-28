@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Light on every device.
+
+      DayNight followed each phone's own light/dark setting, so the same screen came up
+      white on one handset and black on the next purely because of how that handset was
+      configured. The crew reads this screen outdoors, and the white one is the one that
+      reads better in daylight, so it is used everywhere rather than being a setting
+      nobody remembers to change.
+    -->
+    <style name="Theme.ForestPointCollector" parent="Theme.Material3.Light" />
+</resources>
