@@ -17,7 +17,7 @@ import kotlin.math.hypot
  */
 class FlightPlanVariantsTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     /**
      * These tests measure the real flight survey, which needs Air_Calls_YR_4. A folder
@@ -213,7 +213,7 @@ class FlightPlanVariantsTest {
         val raw = lines()
         val cs = calls()
         val prj = FlightPlanWriter.prjTextOf(dir, "Air_Calls_YR_4.shp")
-        val outDir = File(System.getenv("FORNAV_EXPORT") ?: "/home/mircea/ForestNavigator/flight_plan_export")
+        val outDir = File(System.getenv("FORNAV_EXPORT") ?: (System.getProperty("user.home") + "/ForestNavigator/flight_plan_export"))
         outDir.mkdirs()
 
         // the long features the plan is meant to use

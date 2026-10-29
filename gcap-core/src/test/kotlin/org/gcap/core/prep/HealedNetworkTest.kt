@@ -99,7 +99,7 @@ class HealedNetworkTest {
 
     @Test
     fun healingTheRealAccessLayerStillBuildsANetworkAfterwards() {
-        val f = File("/home/mircea/ForestNavigator/FOR_NAV/access.shp")
+        val f = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV/access.shp")
         org.junit.jupiter.api.Assumptions.assumeTrue(f.exists(), "real project not present")
         val shapes = org.gcap.core.ShpFormat.readShp(f.readBytes(), -1e18, -1e18, 1e18, 1e18)
         val lines = shapes.map { LineHealing.Line(it.parts, it.recordIndex) }

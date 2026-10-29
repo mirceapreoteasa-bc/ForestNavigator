@@ -7,7 +7,7 @@ import java.io.File
 
 class OdsTableTest {
 
-    private val project = File("/home/mircea/projects/ForestNavigator")
+    private val project = File(System.getProperty("user.home"), "projects/ForestNavigator")
 
     private fun settings(): OdsTable? {
         val f = File(project, "settings_1.ods")

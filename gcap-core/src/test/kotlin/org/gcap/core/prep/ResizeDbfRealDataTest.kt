@@ -15,7 +15,7 @@ import java.io.File
 class ResizeDbfRealDataTest {
 
     private fun realDbf(): ByteArray {
-        val f = File("/home/mircea/ForestNavigator/FOR_NAV/access.dbf")
+        val f = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV/access.dbf")
         assumeTrue(f.exists(), "real project not present")
         return f.readBytes()
     }
@@ -54,7 +54,7 @@ class ResizeDbfRealDataTest {
 
     @Test
     fun theWholeHealedWriteProducesFourReadableFiles() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(File(dir, "access.shp").exists(), "real project not present")
         val shapes = ShpFormat.readShp(File(dir, "access.shp").readBytes(), -1e18, -1e18, 1e18, 1e18)
         val own = shapes.size   // whatever the layer holds today, not a fixed count

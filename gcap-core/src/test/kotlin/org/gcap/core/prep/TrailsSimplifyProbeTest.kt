@@ -26,7 +26,7 @@ class TrailsSimplifyProbeTest {
 
     @Test
     fun `simplification tolerances compared on trails`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(File(dir, "trails.shp").isFile, "survey trails layer not present")
         val original = load(dir)
         println("SIMPLIFY original features=${original.size} vertices=${vertices(original)}")

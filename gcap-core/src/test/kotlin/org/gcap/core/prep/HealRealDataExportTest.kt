@@ -19,8 +19,8 @@ import java.io.File
  */
 class HealRealDataExportTest {
 
-    private val realDir = File("/home/mircea/ForestNavigator/FOR_NAV")
-    private val exportDir = File("/home/mircea/ForestNavigator/healing_export")
+    private val realDir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
+    private val exportDir = File(System.getProperty("user.home"), "ForestNavigator/healing_export")
 
     /** The four sidecars of a real layer, so the export can keep its attributes. */
     private fun sidecars(stem: String): Map<String, ByteArray> {

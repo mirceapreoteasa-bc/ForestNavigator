@@ -12,7 +12,7 @@ import java.io.File
  */
 class AutoSaveSettingTest {
 
-    private val p = File("/home/mircea/projects/ForestNavigator")
+    private val p = File(System.getProperty("user.home"), "projects/ForestNavigator")
 
     @Test
     fun noSpreadsheetMeansTheAppDefault() {

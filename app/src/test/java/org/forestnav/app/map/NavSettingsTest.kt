@@ -9,7 +9,7 @@ import java.io.File
 
 class NavSettingsTest {
 
-    private val project = File("/home/mircea/projects/ForestNavigator")
+    private val project = File(System.getProperty("user.home"), "projects/ForestNavigator")
 
     private fun real(): SettingsResolver? {
         val sf = File(project, "settings_1.ods")
@@ -146,7 +146,7 @@ class NavSettingsTest {
  */
 class SettingsSheetLayoutTest {
 
-    private val table = OdsTable.parse(File("/home/mircea/projects/ForestNavigator/settings_1.ods").readBytes())
+    private val table = OdsTable.parse(File(System.getProperty("user.home"), "projects/ForestNavigator/settings_1.ods").readBytes())
 
     private fun at(a: String) = table?.cell(a)?.trim().orEmpty()
 
@@ -211,8 +211,8 @@ class SettingsSheetLayoutTest {
 class TrackLayerMatchTest {
 
     private val dir = SettingsResolver(
-        OdsTable.parse(File("/home/mircea/projects/ForestNavigator/settings_1.ods").readBytes()), 1,
-        OdsTable.parse(File("/home/mircea/projects/ForestNavigator/layer_settings.ods").readBytes()), 1,
+        OdsTable.parse(File(System.getProperty("user.home"), "projects/ForestNavigator/settings_1.ods").readBytes()), 1,
+        OdsTable.parse(File(System.getProperty("user.home"), "projects/ForestNavigator/layer_settings.ods").readBytes()), 1,
     )
 
     @Test

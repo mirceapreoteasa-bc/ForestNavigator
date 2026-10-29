@@ -11,7 +11,7 @@ class ParallelProbeTest {
 
     @Test
     fun `report nearby parallel pairs`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(dir.isDirectory)
         for (name in listOf("trails", "roads", "access")) {
             val shp = File(dir, "$name.shp")

@@ -18,7 +18,7 @@ import javax.imageio.ImageIO
  */
 class RealJpegRasterTest {
 
-    private val tiff = File("/home/mircea/ForestNavigator/FOR_NAV/google5m.tif")
+    private val tiff = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV/google5m.tif")
     private val reference = "/raster/google5m_ref_64.png"
 
     /**

@@ -11,7 +11,7 @@ import java.io.File
  */
 class VerifyRealDataTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     @Test
     fun `verifies the real project folder`() {

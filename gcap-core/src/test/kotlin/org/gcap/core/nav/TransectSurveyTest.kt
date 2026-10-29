@@ -14,7 +14,7 @@ import java.io.File
  */
 class TransectSurveyTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     /**
      * These tests measure the real flight survey, which needs Air_Calls_YR_4. A folder

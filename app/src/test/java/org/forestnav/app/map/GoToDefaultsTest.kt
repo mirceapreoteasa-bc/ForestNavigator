@@ -14,7 +14,7 @@ import java.io.File
  */
 class GoToDefaultsTest {
 
-    private val forNav = File("/home/mircea/ForestNavigator/FOR_NAV")
+    private val forNav = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
 
     /** The first call/naming field a layer offers; the survey folder varies. */
     private val NAMED_FIELDS = listOf("Call_Num", "GCALL_ID", "NAME", "Call_ID", "F001A")

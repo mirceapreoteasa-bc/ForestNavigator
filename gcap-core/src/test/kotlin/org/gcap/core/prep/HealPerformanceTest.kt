@@ -16,7 +16,7 @@ import java.io.File
 class HealPerformanceTest {
 
     private fun realAccess(): List<LineHealing.Line> {
-        val f = File("/home/mircea/ForestNavigator/FOR_NAV/access.shp")
+        val f = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV/access.shp")
         assumeTrue(f.exists(), "real project not present")
         // the extent arguments filter by bounding box: pass the whole plane
         val shapes = ShpFormat.readShp(f.readBytes(), -1e18, -1e18, 1e18, 1e18)

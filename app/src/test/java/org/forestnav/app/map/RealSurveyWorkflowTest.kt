@@ -25,7 +25,7 @@ class RealSurveyWorkflowTest {
     @get:Rule
     val tmp = TemporaryFolder()
 
-    private val real = File("/home/mircea/ForestNavigator/FOR_NAV")
+    private val real = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
     /** Snapshot of the real tracks.shp taken before the test writes anything. */
     private var realTracksShpBytes: ByteArray? = null
 
@@ -334,7 +334,7 @@ class RealSurveyWorkflowTest {
  */
 class RealNameFieldTest {
 
-    private val real = File("/home/mircea/ForestNavigator/FOR_NAV")
+    private val real = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
 
     @Test
     fun mobLayerResolvesToItsOwnNameFieldNotTheEditSetting() {

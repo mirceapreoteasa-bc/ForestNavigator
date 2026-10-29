@@ -11,7 +11,7 @@ import java.io.File
  */
 class RepairSweepTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     private fun lines(): List<DoubleArray> {
         val h = ShpFormat.shpHeader(File(dir, "flight_path.shp").readBytes())!!

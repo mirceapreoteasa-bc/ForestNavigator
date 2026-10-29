@@ -21,7 +21,7 @@ class NetworkRealDataTest {
     private companion object { const val MAX_TEST_FEATURES = 6_000 }
 
     private val dir: File =
-        File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+        File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     /**
      * Features are capped: the survey folder's `roads` layer grew past 90,000 features,

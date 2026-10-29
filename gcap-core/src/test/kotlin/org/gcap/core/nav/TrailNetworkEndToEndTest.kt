@@ -18,7 +18,7 @@ class TrailNetworkEndToEndTest {
 
     @Test
     fun `a route follows the network rather than the straight line`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         val shp = File(dir, "trails.shp")
         assumeTrue(shp.isFile, "trails layer not present")
 

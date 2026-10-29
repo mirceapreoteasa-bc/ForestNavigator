@@ -8,7 +8,7 @@ import java.io.File
 
 class FlightPathRepairRealDataTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     private fun lines(): List<DoubleArray> {
         val h = ShpFormat.shpHeader(File(dir, "flight_path.shp").readBytes())!!
@@ -53,7 +53,7 @@ class FlightPathRepairRealDataTest {
         println("REPAIR joined lines=${joined.size}, pieces in them=${joined.sumOf { it.featureIds.size }}")
 
         // export so it can be inspected in QGIS before any plan is built on it
-        val out = File("/home/mircea/ForestNavigator/flight_plan_export")
+        val out = File(System.getProperty("user.home"), "ForestNavigator/flight_plan_export")
         out.mkdirs()
         val prj = File(dir, "flight_path.prj").let { if (it.exists()) it.readText() else "" }
         // a feature is a list of points, each a flat e,n pair

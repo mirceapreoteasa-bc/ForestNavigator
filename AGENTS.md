@@ -50,10 +50,10 @@ lists the points" rather than "layers drawn". Recorded in
 `docs/NAVIGATION_REQUIREMENTS.md` (~line 697).
 
 **Real-data tests write outside the repo.** Ten test classes read the survey layers and
-several write shapefiles to `/home/mircea/ForestNavigator/flight_plan_export`. They skip
+several write shapefiles to `~/ForestNavigator/flight_plan_export`. They skip
 themselves via `Assumptions.assumeTrue` when the data is absent.
 
-Data location: `FORNAV_DATA` env var, defaulting to `/home/mircea/ForestNavigator/FOR_NAV`.
+Data location: `FORNAV_DATA` env var, defaulting to `~/ForestNavigator/FOR_NAV`.
 `:gcap-core` tests are configured for a 3 GB heap because of them — leave that alone.
 
 ## Where things live

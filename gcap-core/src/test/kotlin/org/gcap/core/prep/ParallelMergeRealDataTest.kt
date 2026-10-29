@@ -17,7 +17,7 @@ class ParallelMergeRealDataTest {
 
     @Test
     fun `trails get thin enough to build a network`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(dir.isDirectory)
         val before = load(dir, "trails")
         println("MERGE trails before features=${before.size} " +
@@ -73,7 +73,7 @@ class ParallelMergeRealDataTest {
 
     @Test
     fun `roads merge without touching distinct roads`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(dir.isDirectory)
         val roads = File(dir, "roads.shp")
         assumeTrue(roads.isFile)

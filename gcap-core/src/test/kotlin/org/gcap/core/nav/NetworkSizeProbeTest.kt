@@ -13,7 +13,7 @@ class NetworkSizeProbeTest {
 
     @Test
     fun `report build cost per real layer`() {
-        val dir = File("/home/mircea/ForestNavigator/FOR_NAV")
+        val dir = File(System.getProperty("user.home"), "ForestNavigator/FOR_NAV")
         assumeTrue(dir.isDirectory, "survey folder not present")
         for (name in listOf("access", "trails", "roads")) {
             val shp = File(dir, "$name.shp")

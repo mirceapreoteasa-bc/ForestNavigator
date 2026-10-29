@@ -11,7 +11,7 @@ import java.io.File
  */
 class TransitTransitionRealDataTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     /**
      * These tests measure the real flight survey, which needs Air_Calls_YR_4. A folder
@@ -140,7 +140,7 @@ class TransitTransitionRealDataTest {
     }
 
     private fun write(lines: List<DoubleArray>, checks: List<FlightLineSequence.LineCheck>) {
-        val out = File("/home/mircea/ForestNavigator/flight_plan_export")
+        val out = File(System.getProperty("user.home"), "ForestNavigator/flight_plan_export")
         out.mkdirs()
         val prj = File(dir, "flight_path.prj").let { if (it.exists()) it.readText() else "" }
         val nm = "flight_lines_1000_transit"

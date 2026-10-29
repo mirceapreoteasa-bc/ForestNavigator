@@ -12,7 +12,7 @@ import java.io.File
  */
 class RouteChainRealDataTest {
 
-    private val dir = File(System.getenv("FORNAV_DATA") ?: "/home/mircea/ForestNavigator/FOR_NAV")
+    private val dir = File(System.getenv("FORNAV_DATA") ?: (System.getProperty("user.home") + "/ForestNavigator/FOR_NAV"))
 
     /**
      * These tests measure the real flight survey, which needs Air_Calls_YR_4. A folder
@@ -122,7 +122,7 @@ class RouteChainRealDataTest {
         // flown rather than a chord between the calls
         val plan = FlightPlan.buildTraced(calls, raw, weldM = 500.0)
 
-        val outDir = File(System.getenv("FORNAV_EXPORT") ?: "/home/mircea/ForestNavigator/flight_plan_export")
+        val outDir = File(System.getenv("FORNAV_EXPORT") ?: (System.getProperty("user.home") + "/ForestNavigator/flight_plan_export"))
         outDir.mkdirs()
         val prj = FlightPlanWriter.prjTextOf(dir, "Air_Calls_YR_4.shp")
         val writer = FlightPlanWriter(plan, calls)
